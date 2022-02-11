@@ -8,7 +8,7 @@ Resource    ../base/common_functionality.resource
 Test Setup   Launch Browser
 Test Teardown    End Browser
 
-Test Template    Verify Vlid Credentials Template
+Test Template    Verify Vaid Credential Template
 
 *** Test Cases ***
 TC1  admin   pass    English (Indian)    OpenEMR
