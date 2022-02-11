@@ -17,7 +17,7 @@ TC2  physician   physician   English (Indian)    OpenEMR
 
 
 *** Keywords ***
-Verify Vlid Credentials Template
+Verify Valid Credentials Template
      [Arguments]  ${username}    ${password}     ${language}     ${expected_title}
      Launch Browser
      Input Text    id=authUser    ${username}
