@@ -5,6 +5,9 @@ Documentation      This suit file handles all the test case related to the
 Library     SeleniumLibrary
 Resource    ../base/common_functionality.resource
 
+Test Setup   Launch Browser
+Test Teardown    End Browser
+
 *** Test Cases ***
 Verify Valid Credentials Test
     Launch Browser
@@ -13,4 +16,3 @@ Verify Valid Credentials Test
     Select From List By Label    name=languageChoice    English (Indian)
     Click Element    xpath=//button[@type='submit']
     Title Should Be    OpenEMR
-    Close Browser
