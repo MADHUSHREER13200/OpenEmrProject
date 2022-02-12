@@ -16,11 +16,11 @@ TC2  peter   peter123    Danish  Invalid username or password
 TC3  Mark    Mark123     Greek   Invalid username or password
 
 *** Test Cases ***
-Verify Invalid Credential Test
-     [Arguments]  ${username}    ${password}     ${language}     ${expected_title}
+Verify Invalid Credential Template
+     [Arguments]  ${username}    ${password}     ${language}     ${expected_error}
      Input Text    id=authUser   John
      Input Password    id=clearPass    john123
      Select From List By Label    name=languageChoice    dutch
      Click Element  xpath=//button[@type='submit']
-     Element Should Contain  //div[contains(text)(),Invalid)]    Invalid username or password
+     Element Should Contain  //div[contains(text)(),Invalid)]    ${expected_error}
 

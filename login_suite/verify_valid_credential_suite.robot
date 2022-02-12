@@ -17,11 +17,11 @@ TC2  physician   physician   English (Indian)    OpenEMR
 
 
 *** Keywords ***
-Verify Valid Credential Template
-     [Arguments]  ${username}    ${password}     ${language}     ${expected_error}
+Verify Valid Credentials Template
+     [Arguments]  ${username}    ${password}     ${language}     ${expected_title}
      Launch Browser
      Input Text    id=authUser    ${username}
      Input Password    id=clearPass    ${password}
      Select From List By Label    name=languageChoice    ${language}
-     Click Element    xpath=//button[@type='submit']\
-     Element Should Contain    //div[contains(text(),'Invalid')]    ${expected_error}
+     Click Element    xpath=//button[@type='submit']
+     Title Should Be    ${expected_title}
