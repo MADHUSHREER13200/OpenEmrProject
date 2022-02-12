@@ -22,5 +22,5 @@ Verify Invalid Credential Template
      Input Password    id=clearPass    john123
      Select From List By Label    name=languageChoice    dutch
      Click Element  xpath=//button[@type='submit']
-     Element Should Contain  //div[contains(text)(),Invalid)]    ${expected_error}
+     Element Should Contain  //div[contains(text)(),'Invalid')]    ${expected_error}
 
