@@ -17,6 +17,7 @@ TC3  Mark    Mark123     Greek   Invalid username or password
 
 *** Test Cases ***
 Verify Invalid Credential Test
+     [Arguments]  ${username}    ${password}     ${language}     ${expected_title}
      Input Text    id=authUser   John
      Input Password    id=clearPass    john123
      Select From List By Label    name=languageChoice    dutch
