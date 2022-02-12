@@ -2,10 +2,10 @@
 Documentation      This suit file handles all the test case related to the
 ...     invalid credentials
 
+Resource   ../pages/login_page.resource
 
-Resource     ../pages/login_page.resource
 Test Setup      Launch Browser
-Test Teardown    End Browser
+Test Teardown   End Browser
 
 Test Template       Verify Invalid Credential Template
 #*** Comments ***
@@ -25,8 +25,8 @@ TC4     peter        ${EMPTY}          Greek       Invalid username or password
 *** Keywords ***
 Verify Invalid Credential Template
     [Arguments]     ${username}     ${password}     ${language}     ${expected_error}
-    Enter Username       ${username}
-    Enter password       ${password}
-    Select Language Using Label       ${language}
+    Input Text    id=authUser    ${username}
+    Input Password    id=clearPass    ${password}
+    Select From List By Label    name=languageChoice    ${language}
     Click Login
-    Validate Invalid Error Message    ${expected_error}
+    Element Should Contain    //div[contains(text(),'Invalid')]    ${expected_error}
